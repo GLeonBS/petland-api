@@ -1,4 +1,4 @@
-package com.petland.domain.cadastro;
+package com.petland.model;
 
 public class Perfil {
     private boolean cliente;
