@@ -5,10 +5,11 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 
-@Data
 @Entity
-@Table(name = "tab_cadastro")
-public class Cadastro {
+@Table(name = "tab_produto_servico")
+@Data
+public class ProdutoServico {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
@@ -16,9 +17,6 @@ public class Cadastro {
 
     @Column(length = 50, nullable = false)
     private String nome;
-
-    @Embedded
-    private Perfil perfil;
-    @Embedded
-    private Endereco endereco;
+    private Double valor;
+    private boolean servico;
 }

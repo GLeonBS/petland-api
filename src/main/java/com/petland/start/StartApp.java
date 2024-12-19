@@ -1,24 +1,39 @@
 package com.petland.start;
 
-import com.petland.model.Cadastro;
-import com.petland.repository.CadastroRepository;
+import com.petland.model.Animal;
+import com.petland.model.AnimalEspecie;
+import com.petland.model.ProdutoServico;
+import com.petland.repository.AnimalRepository;
+import com.petland.repository.ProdutoServicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class StartApp implements ApplicationRunner {
 
+
     @Autowired
-    private CadastroRepository cadastroRepository;
+    private AnimalRepository animalRepository;
+
+    @Autowired
+    private ProdutoServicoRepository produtoServicoRepository;
 
     @Override
     public void run(org.springframework.boot.ApplicationArguments args) throws Exception {
-        Cadastro leon = new Cadastro();
-        leon.setId(1);
-        leon.setNome("Gabriel Leon");
+        Animal bolota = new Animal();
+        bolota.setNome("Bolota");
+        bolota.setEspecie(AnimalEspecie.CACHORRO);
+        bolota.setAniversario(LocalDate.of(2018, 1, 1));
 
-        cadastroRepository.save(leon);
+        ProdutoServico banhoETosa = new ProdutoServico();
+        banhoETosa.setNome("Banho e Tosa");
+        banhoETosa.setValor(60.0);
+        banhoETosa.setServico(true);
 
+        animalRepository.save(bolota);
+        produtoServicoRepository.save(banhoETosa);
     }
 }

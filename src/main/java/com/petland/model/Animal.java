@@ -5,20 +5,22 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 
-@Data
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "tab_cadastro")
-public class Cadastro {
+@Table(name = "tab_animal")
+@Data
+public class Animal {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Integer id;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 40, nullable = false)
     private String nome;
+    private LocalDate aniversario;
 
-    @Embedded
-    private Perfil perfil;
-    @Embedded
-    private Endereco endereco;
+    @Enumerated(EnumType.STRING)
+    private AnimalEspecie especie;
 }
