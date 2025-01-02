@@ -1,4 +1,4 @@
-package com.petland.model;
+package com.petland.cadastro.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Embeddable
 @Setter
 public class Endereco {
-    
+
     @Column(name = "logra", length = 50)
     private String logradouro;
 

@@ -1,4 +1,4 @@
-package com.petland.controller;
+package com.petland.cadastro.controller;
 
 import java.util.List;
 
@@ -12,29 +12,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.petland.model.dto.CadastroRequest;
-import com.petland.model.dto.CadastroResponse;
-import com.petland.service.CadastroService;
+import com.petland.cadastro.model.dto.AnimalRequest;
+import com.petland.cadastro.model.dto.AnimalResponse;
+import com.petland.cadastro.service.AnimalService;
 
 @RestController
-@RequestMapping("/cadastros")
-public class CadastroController {
+@RequestMapping("/animais")
+public class AnimalController {
     @Autowired
-    private CadastroService service;
+    private AnimalService service;
 
     @PostMapping
-    public Integer criar(@RequestBody CadastroRequest cliente) {
-        return service.gravar(cliente);
+    public Integer criar(@RequestBody AnimalRequest animal) {
+        return service.gravar(animal);
     }
 
     @PutMapping("/{id}")
     public Integer alterar(@PathVariable("id") Integer id,
-            @RequestBody CadastroRequest requisicao) {
+            @RequestBody AnimalRequest requisicao) {
         return service.alterar(id, requisicao);
     }
 
     @GetMapping()
-    public List<CadastroResponse> listar() {
+    public List<AnimalResponse> listar() {
         return service.listar();
     }
 

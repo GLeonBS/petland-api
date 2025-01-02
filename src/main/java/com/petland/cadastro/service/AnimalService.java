@@ -1,4 +1,4 @@
-package com.petland.service;
+package com.petland.cadastro.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +7,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.petland.model.dto.AnimalRequest;
-import com.petland.model.dto.AnimalResponse;
-import com.petland.model.entity.AnimalEntity;
-import com.petland.repository.AnimalRepository;
+import com.petland.cadastro.model.dto.AnimalRequest;
+import com.petland.cadastro.model.dto.AnimalResponse;
+import com.petland.cadastro.model.entity.AnimalEntity;
+import com.petland.cadastro.repository.AnimalRepository;
 
 @Service
 public class AnimalService {

@@ -1,7 +1,8 @@
-package com.petland.repository;
+package com.petland.cadastro.repository;
 
-import com.petland.model.entity.AnimalEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.petland.cadastro.model.entity.AnimalEntity;
 
 public interface AnimalRepository extends JpaRepository<AnimalEntity, Integer> {
 }

@@ -1,4 +1,4 @@
-package com.petland.model;
+package com.petland.cadastro.model;
 
 public enum AnimalEspecie {
     GATO,

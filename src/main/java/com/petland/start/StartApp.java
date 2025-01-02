@@ -1,14 +1,14 @@
 package com.petland.start;
 
-import com.petland.repository.AnimalRepository;
-import com.petland.repository.ProdutoServicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import com.petland.cadastro.repository.AnimalRepository;
+import com.petland.cadastro.repository.ProdutoServicoRepository;
+
 @Component
 public class StartApp implements ApplicationRunner {
-
 
     @Autowired
     private AnimalRepository animalRepository;

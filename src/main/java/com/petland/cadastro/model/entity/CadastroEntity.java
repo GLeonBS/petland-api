@@ -1,8 +1,15 @@
-package com.petland.model.entity;
+package com.petland.cadastro.model.entity;
 
-import com.petland.model.Endereco;
-import com.petland.model.Perfil;
-import jakarta.persistence.*;
+import com.petland.cadastro.model.Endereco;
+import com.petland.cadastro.model.Perfil;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;

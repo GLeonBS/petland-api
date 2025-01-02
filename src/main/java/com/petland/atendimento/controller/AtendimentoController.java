@@ -1,4 +1,4 @@
-package com.petland.controller;
+package com.petland.atendimento.controller;
 
 import java.util.List;
 
@@ -12,29 +12,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.petland.model.dto.AnimalRequest;
-import com.petland.model.dto.AnimalResponse;
-import com.petland.service.AnimalService;
+import com.petland.atendimento.dto.AtendimentoRequest;
+import com.petland.atendimento.dto.AtendimentoResponse;
+import com.petland.atendimento.service.AtendimentoService;
 
 @RestController
-@RequestMapping("/animais")
-public class AnimalController {
+@RequestMapping("/atendimentos")
+public class AtendimentoController {
     @Autowired
-    private AnimalService service;
+    private AtendimentoService service;
 
     @PostMapping
-    public Integer criar(@RequestBody AnimalRequest animal) {
-        return service.gravar(animal);
+    public Integer criar(@RequestBody AtendimentoRequest atendimento) {
+        return service.gravar(atendimento);
     }
 
     @PutMapping("/{id}")
     public Integer alterar(@PathVariable("id") Integer id,
-            @RequestBody AnimalRequest requisicao) {
+            @RequestBody AtendimentoRequest requisicao) {
         return service.alterar(id, requisicao);
     }
 
     @GetMapping()
-    public List<AnimalResponse> listar() {
+    public List<AtendimentoResponse> listar() {
         return service.listar();
     }
 
